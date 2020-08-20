@@ -10,9 +10,9 @@ parser.add_argument("-e", "--encode", action="count", help="encode sentences to 
 args = parser.parse_args()
 
 if args.decode :
-    print(tapcode.decipher_matrix(args.sentence," ","."))
+    print(tapcode.decipher(args.sentence," ","."))
 
 elif args.encode:
-    print(tapcode.encipher_matrix(args.sentence," ","."))
+    print(tapcode.encipher(args.sentence," ","."))
 else:
     print("The sentence cannot be processed !")
