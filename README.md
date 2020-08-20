@@ -1,6 +1,6 @@
 # TAPCODE
 
-[![PyPI version](https://badge.fury.io/py/tapcode.svg)](https://badge.fury.io/py/mitrecve) [![Requirements Status](https://requires.io/github/remiflavien1/tapcode/requirements.svg?branch=master)](https://requires.io/github/remiflavien1/tapcode/requirements/?branch=master) [![Documentation Status](https://readthedocs.org/projects/tapcode/badge/?version=latest)](https://tapcode.readthedocs.io/en/latest/?badge=latest)
+[![PyPI version](https://badge.fury.io/py/tapcode.svg)](https://badge.fury.io/py/tapcode) [![Requirements Status](https://requires.io/github/remiflavien1/tapcode/requirements.svg?branch=master)](https://requires.io/github/remiflavien1/tapcode/requirements/?branch=master) [![Documentation Status](https://readthedocs.org/projects/tapcode/badge/?version=latest)](https://tapcode.readthedocs.io/en/latest/?badge=latest)
 
 
 Tapcode Cypher also known as Prisoner's tapcode.

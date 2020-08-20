@@ -2,7 +2,7 @@ API Documentation
 ==================
 
 Decipher and Encipher method 
----------------------
+-----------------------------
 
-.. automodule:: tapcode
+.. automodule:: tapcode.tapcode
    :members:
