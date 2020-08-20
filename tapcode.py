@@ -1,13 +1,5 @@
 from pprint import pprint
-# create tapcode struct with a dict
-
-polybe = {
-    1:["A","B","C","D","E"],
-    2:["F","G","H","I","J"],
-    3:["L","M","N","O","P"],
-    4:["Q","R","S","T","U"],
-    5:["V","W","X","Y","Z"],
-}
+# create tapcode structurea with a dict
 
 
 matrix = [
@@ -17,34 +9,6 @@ matrix = [
     ["Q","R","S","T","U"],
     ["V","W","X","Y","Z"]
 ]
-
-def prepare_encyphered(code,sep=" "):
-    """
-    Split word according to a separator
-    """
-    return code.split(sep)
-
-def decypher_matrix(code):
-    decyphered = []
-    
-    code = prepare_encyphered(code) # list of word
-    for word in code :
-        splitting = [(word[l],word[l+1]) for l in range(0,len(word),2)]  
-
-        for tuple in splitting :
-            decyphered.append(matrix[int(tuple[0])-1][int(tuple[1])-1]) # minus one because index start at 0 but number in code start at 1
-        decyphered.append(" ")
-
-    return "".join(decyphered)
-
-
-    return decyphered
-
-#print(decypher_matrix("2315313134 2315313134"))
-
-def encypher_matrix(sentence):
-    sentence = prepare_sentence(sentence)
-    
 
 def prepare_sentence(sentence):
     """Prepare a sentence for the encryption"""
@@ -61,25 +25,59 @@ def prepare_sentence(sentence):
 
     return sentence.split(".")
 
+def decipher_matrix(code,wordSep,sentenceSep):
+    """
+    Decipher tapcode sentences.
 
-print(prepare_sentence("Salut tête de con. Tu as l'air bien aise"))
+    Args: 
+        code : Tapcode sentence to decipher.
+    
+    Return:
+        string. Deciphered tapcode sentences.
 
-def cypher(sentence):
-    sentence=prepare_sentence(sentence)
-    cypheredText = []
-    letter = [letter for letter in sentence]
+    """
+    deciphered = []
+    
+    for p in code.split(sentenceSep) :
+        for word in p.strip().split(wordSep) :
+            splitting = [(word[l],word[l+1]) for l in range(0,len(word),2)]  
 
-    for l in letter :
-        if l == ' ':
-            cypheredText.append(' ')
-            continue
+            for tuple in splitting :
+                deciphered.append(matrix[int(tuple[0])-1][int(tuple[1])-1]) # minus one because index start at 0 but number in code start at 1
+            deciphered.append(wordSep)
+        deciphered.append(sentenceSep)
 
-        for key in polybe.keys():
-            if l.upper() in polybe[key]:
-                cypheredClean = str(key)+str(int(polybe[key].index(l.upper())+1))
-                cypheredText.append(cypheredClean)
+    return "".join(deciphered)
 
-    return ''.join(cypheredText)
+def encipher_matrix(sentence,wordSep,sentenceSep):
+    """
+    encipher a sentence with tapcode system
 
+    args:
+        sentence (list) : List of sentence
+        wordSep (string) : Separator for word (basically just a space by default)
+        sentenceSet (string) : Separator for sentence (basically just a dot by default)
+    
+    return:
+        string. Enciphered sentences.
+    """
+    sentence = prepare_sentence(sentence)
 
-print(encypher_matrix("Salut tête de con. Tu as l'air bien aise"))
+    encipheredText = []
+
+    for p in sentence :
+        for word in p.strip().split(" "):
+            for letter in word:
+                for i in range(len(matrix)):
+                    for j in range(len(matrix[i])):
+                        if matrix[i][j] == letter:
+                            encipheredText.append(str(i+1)+str(j+1))
+            encipheredText.append(wordSep)
+        encipheredText.append(sentenceSep)
+    
+
+    return "".join(encipheredText)
+
+#print(encipher_matrix("I love cypher !", " " , "." ))
+#print(decipher_matrix("24 31345115 135435231542"," ", "."))
+
