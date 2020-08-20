@@ -14,7 +14,7 @@ To upgrade using pip :
 
 .. code-block:: sh
 
-    python -m pip install --upgrade tapcode
+    pip3 install --upgrade tapcode
 
 
 Installing from source
