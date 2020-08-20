@@ -3,7 +3,7 @@ import argparse
 from tapcode import tapcode
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog="tapcode",description='Encipher or Decipher a tapcode message.')
     parser.add_argument("-s","--sentence",help="Sentence to cypher or decipher")
     parser.add_argument("-f","--file",help="file to cypher or decipher")
     parser.add_argument("-d", "--decode", action="store_true", help="decode tapcode sentence.")
