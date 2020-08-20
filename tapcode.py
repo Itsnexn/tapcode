@@ -1,6 +1,6 @@
-from pprint import pprint
-# create tapcode structurea with a dict
+#!/usr/bin/env python
 
+# polybe square 
 polybe = [
     ["A","B","C","D","E"],
     ["F","G","H","I","J"],
@@ -49,6 +49,10 @@ def decipher(code,wordSep,sentenceSep):
     """
     deciphered = []
     
+    if len(code) % 2 == 0 :
+        print("Your code length is not pair. You forget a digit !!!")
+        exit(0)
+
     for p in code.split(sentenceSep) :
         for word in p.strip().split(wordSep) :
             splitting = [(word[l],word[l+1]) for l in range(0,len(word),2)]  
