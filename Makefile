@@ -1,8 +1,8 @@
 MODULE=tapcode
 
 docs:
-    cd docs && make html
-
+	cd docs && make html
+	
 require:
 	python3 -m pip install -r requirements.txt
 

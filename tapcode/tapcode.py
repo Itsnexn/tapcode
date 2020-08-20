@@ -13,8 +13,8 @@ def prepare_sentence(sentence):
     """
     Prepare a sentence for the encryption
     
-    Arg: 
-        sentence (string). Sentences to encode.
+    Args: 
+        sentence (string): Sentences to encode.
     
     return:
         string. Cleaned sentences.
