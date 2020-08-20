@@ -51,8 +51,7 @@ def decipher(code,wordSep,sentenceSep):
     
     if len(code) % 2 == 0 :
         print("Your code length is not pair. You forget a digit !!!")
-        exit(0)
-
+        
     for p in code.split(sentenceSep) :
         for word in p.strip().split(wordSep) :
             splitting = [(word[l],word[l+1]) for l in range(0,len(word),2)]  
@@ -92,5 +91,4 @@ def encipher(sentence,wordSep,sentenceSep):
     
 
     return "".join(encipheredText)
-
 
