@@ -48,9 +48,6 @@ def decipher(code,wordSep,sentenceSep):
 
     """
     deciphered = []
-    
-    if len(code) % 2 == 0 :
-        print("Your code length is not pair. You forget a digit !!!")
         
     for p in code.split(sentenceSep) :
         for word in p.strip().split(wordSep) :
