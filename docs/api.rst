@@ -1,8 +1,15 @@
 API Documentation
 ==================
 
-Decipher and Encipher method 
------------------------------
+Import
+------
+
+.. code-block:: py
+
+   from tapcode import tapcode
+
+API Documentation
+---
 
 .. automodule:: tapcode.tapcode
    :members:

@@ -1,7 +1,7 @@
-Installing / Upgrading 
-========================
+Installing / Upgrading
+=======================
 
-Tapcode is available on `PyPi <https://pypi.org/project/mitrecve/>`_ and only for python3.x
+Tapcode is available on `PyPi <https://github.com/remiflavien1/tapcode>`_ and only for python3.7+
 
 We recommend using ``pip3`` to install Tapcode on all platforms:
 
@@ -10,7 +10,7 @@ We recommend using ``pip3`` to install Tapcode on all platforms:
     pip3 install tapcode
 
 
-To upgrade using pip : 
+To upgrade using pip :
 
 .. code-block:: sh
 
@@ -20,11 +20,20 @@ To upgrade using pip :
 Installing from source
 -----------------------
 
-If you’d rather install directly from the source, clone the git repository and install with Setuptool
+If you’d rather install directly from the source, clone the git repository and install with Setuptool:
 
 .. code-block:: sh
 
-    git clone https://github.com/remiflavien1/tapcode
+    git clone https://github.com/shadawck/tapcode.git
     cd tapcode
     python3 setup.py install
 
+
+Uninstall
+---------
+
+You can uninstall tapcode with ``pip``:
+
+.. code-block:: sh
+
+    pip uninstall tapcode
