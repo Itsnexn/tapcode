@@ -16,7 +16,7 @@ def prepare_sentence(sentence: str):
 
     Args:
 
-        Sentence (String):          Sentences to encode.
+        Sentence (String): Sentences to encode.
 
     Return:
 
@@ -33,12 +33,14 @@ def prepare_sentence(sentence: str):
     ascii = ["a", "e", "i", "o", "u", "c"]
     specialChars = "~!@#$%^&*()-_+={}][|\`,./?;:'\"<>"
 
-    for item, itemIndex in zip(accent, range(len(accent))):    # Replacing accented characters possible
+    # Replacing accented characters possible
+    for item, itemIndex in zip(accent, range(len(accent))):
         for letter in item:
             if letter in sentence:
                 sentence = sentence.replace(letter, ascii[itemIndex])
 
-    for letter in specialChars:                                 # Remove special characters
+    # Remove special characters
+    for letter in specialChars:
         sentence = sentence.replace(letter, "")
     sentence = sentence.lower()
 
@@ -51,7 +53,7 @@ def decipher(code: str):
 
     Args:
 
-        Code (String):              Tapcode sentence to decipher.
+        Code (String): Tapcode sentence to decipher.
 
     Return:
 
@@ -63,14 +65,14 @@ def decipher(code: str):
         "hello"
     """
 
-    inp = "".join(filter(str.isdigit , code)) # keep numbers and remove other chars
+    # keep numbers and remove other chars
+    inp = "".join(filter(str.isdigit, code))
     deciphered = []
 
     for i in range(0, len(inp), 2):
         splitting = (inp[i], inp[i + 1])
         char = polybe[int(splitting[0]) - 1][int(splitting[1]) - 1]
         deciphered.append(char)
-
 
     return "".join(deciphered)
 
@@ -81,8 +83,8 @@ def encipher(sentence: str, sep: str = " ") -> str:
 
     Args:
 
-        Sentence (String):          sentence
-        Sep (String):               Separator(space by default)
+        Sentence (String): Sentence
+        Sep (String): Separator (space by default)
 
     Return:
 
@@ -107,21 +109,14 @@ def encipher(sentence: str, sep: str = " ") -> str:
                         encipheredText.append(str(i+1) + str(j+1))
                         encipheredText.append(sep)
 
-    # This pice of code will add sep to the end of our encipheredText
-    # so for remove that we can use output[:-len(sep)]
-    # but what if that sep was empty string?
-    # 23 = h become 2 then we cant decode the sentence
-
-    # Thats why i wrote this if statement
+    # Add separator at the end of our encipheredText
     if sep:
         return "".join(encipheredText)[:-(len(sep))]
     else:
         return "".join(encipheredText)
 
 
-
-
-def tapcodeConvert(sentence: str, tap: str= " ", sep: str=".", outputSep: str = " ") -> str:
+def tapcodeConvert(sentence: str, tap: str = " ", sep: str = ".", outputSep: str = " ") -> str:
     """
     Convert TapCode to decimal values
 
@@ -156,7 +151,7 @@ def tapcodeConvert(sentence: str, tap: str= " ", sep: str=".", outputSep: str = 
         if i == sep:
             cleaned += sep
 
-    splited = cleaned.split(sep) # split the cleaned sentence to list of taps
+    splited = cleaned.split(sep)  # split the cleaned sentence to list of taps
 
     for i in range(1, len(splited), 2):
         converted.append(str(len(splited[i - 1])))
@@ -169,7 +164,8 @@ def tapcodeConvert(sentence: str, tap: str= " ", sep: str=".", outputSep: str = 
     else:
         return "".join(converted)
 
-def genTapcode(sentence: str, tap:str = ".", sep: str = " ", dec:bool = False) -> str:
+
+def genTapcode(sentence: str, tap: str = ".", sep: str = " ", dec: bool = False) -> str:
     """
     Generate TapCode from string\Decimal Values
 
@@ -199,7 +195,8 @@ def genTapcode(sentence: str, tap:str = ".", sep: str = " ", dec:bool = False) -
     if not dec:
         inp = encipher(sentence, sep)
 
-    DecimalTaps = "".join(filter(str.isdigit , inp)) # keep numbers and remove other chars
+    # keep numbers and remove other chars
+    DecimalTaps = "".join(filter(str.isdigit, inp))
 
     output = []
     for i in DecimalTaps:

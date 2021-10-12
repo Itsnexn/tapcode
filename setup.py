@@ -9,12 +9,9 @@ with open("README.md", "r") as fh:
 with open('requirements.txt') as f:
     required = f.read().splitlines()
 
-
-
-# This call to setup() does all the work
 setup(
     name="tapcode",
-    version="2.0.0",
+    version="1.1.0",
     description="Prisoner's tap code encryption",
     long_description=long_description,
     long_description_content_type="text/markdown",

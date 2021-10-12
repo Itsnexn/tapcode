@@ -24,7 +24,7 @@ credits = ["shadawck", "Itsnexn"]
 license = "MIT"
 
 # The full version, including alpha/beta/rc tags
-release = "2.0.0"
+release = "1.1.0"
 
 
 # -- General configuration ---------------------------------------------------
@@ -63,7 +63,6 @@ pygments_style = "sphinx"
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     "canonical_url": "",
-    #"analytics_id": "UA-XXXXXXX-1",  #  Provided by Google in your dashboard
     "logo_only": False,
     "display_version": True,
     "prev_next_buttons_location": "bottom",

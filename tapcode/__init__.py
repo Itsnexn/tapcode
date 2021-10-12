@@ -4,4 +4,4 @@ __author__ = "shadawck"
 __copyright__ = "Copyright 2020, The TapCode Project"
 __credits__ = ["shadawck", "Itsnexn"]
 __license__ = "MIT"
-__version__ = "2.0.0"
+__version__ = "1.1.0"

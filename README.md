@@ -1,6 +1,6 @@
 # TAPCODE
 
-[![PyPI version](https://badge.fury.io/py/tapcode.svg)](https://badge.fury.io/py/tapcode) [![Requirements Status](https://requires.io/github/remiflavien1/tapcode/requirements.svg?branch=master)](https://requires.io/github/remiflavien1/tapcode/requirements/?branch=master) [![Documentation Status](https://readthedocs.org/projects/tapcode/badge/?version=latest)](https://tapcode.readthedocs.io/en/latest/?badge=latest)
+[![PyPI version](https://badge.fury.io/py/tapcode.svg)](https://badge.fury.io/py/tapcode) [![Documentation Status](https://readthedocs.org/projects/tapcode/badge/?version=latest)](https://tapcode.readthedocs.io/en/latest/?badge=latest)
 
 Tapcode Cypher also known as Prisoner's tapcode.
 For a complete documentation look at [ReadTheDocs](https://tapcode.readthedocs.io/en/latest/)
@@ -30,38 +30,38 @@ usage: tapcode [-h] [-i INPUT] [-f [FILE]] [-o [OUTPUT]] [-I] [-d] [-e] [-C] [-G
 Encipher or Decipher a tapcode message.
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-                        Sentence to cypher or decipher
-  -f [FILE], --file [FILE]
-                        File to cypher or decipher
-  -o [OUTPUT], --output [OUTPUT]
-                        Output file.
-  -I, --stdin           Standard input
-  -d, --decode          Decode tapcode sentence.
-  -e, --encode          Encode sentences to tapcode (Should be decimal values).
-  -C, --convert         Convert tapcode to Decimal value. '.... ...' => '43'
-  -G, --generate        Generate tapcode!
-  -v, --version         outputHandeler version
+  -h, --help             Show this help message and exit
+  -i, --input INPUT      Sentence to cypher or decipher
+  -f, --file [FILE]      File to cypher or decipher
+  -o, --output [OUTPUT]  Output file
+  -I, --stdin            Standard input
+  -d, --decode           Decode tapcode sentence.
+  -e, --encode           Encode sentences to tapcode (Should be decimal values)
+  -C, --convert          Convert tapcode to Decimal value.
+  -G, --generate         Generate tapcode
+  -v, --version          Tapcode version
 ```
 
-### Features:
-- **Multiple input method:**
+### Features
+
+- **Multiple input method**
   - Input text
   - File input
   - Standard input(Pipe)
-- **Bulit in output flag**
+- **Built in output flag**
 - **Generate and convert any tapcode**
 
-### Examples:
+### Examples
 
 Encipher a clear message:
+
 ```sh
 $ tapcode -es "I Love Tapcode"
 24 31 34 51 15 44 11 35 13 34 14 15
 ```
 
 Decipher a tapcode message:
+
 ```sh
 $tapcode -ds "24 31 34 51 15 44 11 35 13 34 14 15"
 ilovetapcode
@@ -69,12 +69,6 @@ ilovetapcode
 
 **For More Examples check [ReadTheDocs](https://tapcode.readthedocs.io/en/latest/)**
 
-
 ## API
 
 **For a complete API documentation look at [ReadTheDocs](https://tapcode.readthedocs.io/en/latest/)**
-
-> Tapcode-cli 2.0.0 (Windows | GNU/Linux) libTapcode 2.0.0</br>
-> Release Date: Aug 20, 2020</br>
-> credits: shadawck, Itsnexn</br>
-> Copyright 2020, The TapCode Project
