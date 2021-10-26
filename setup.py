@@ -6,7 +6,7 @@ from setuptools import setup
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-#with open('requirements.txt') as f:
+#with open('docs/requirements.txt') as f:
 #    required = f.read().splitlines()
 
 setup(
@@ -25,7 +25,6 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
     ],
     packages=["tapcode"],
     include_package_data=True,

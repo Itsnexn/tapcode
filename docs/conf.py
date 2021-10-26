@@ -12,6 +12,7 @@
 #
 import os
 import sys
+import sphinx_rtd_theme
 sys.path.append(os.path.join(os.path.dirname(__name__), ".."))
 
 
@@ -32,10 +33,11 @@ release = "1.1.0"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named "sphinx.ext.*") or your custom
 # ones.
-extensions = ["sphinx.ext.autodoc","sphinx.ext.coverage","sphinx.ext.napoleon"]
+extensions = ["sphinx.ext.autodoc","sphinx.ext.coverage","sphinx.ext.napoleon", "sphinx_rtd_theme"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
+html_theme_path = ["_themes", ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -74,4 +76,3 @@ html_theme_options = {
     "includehidden": True,
     "titles_only": False
 }
-
