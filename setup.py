@@ -6,8 +6,8 @@ from setuptools import setup
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
+#with open('requirements.txt') as f:
+#    required = f.read().splitlines()
 
 setup(
     name="tapcode",
@@ -29,7 +29,7 @@ setup(
     ],
     packages=["tapcode"],
     include_package_data=True,
-    install_requires=required,
+    #install_requires=required,
     entry_points={
         "console_scripts": [
             "tapcode=tapcode.__main__:main",
